@@ -3,13 +3,11 @@
 
 ## Branch Naming Convention
 
+꼭 **자신의 branch**에서 git clone 또는 git remote add origin 해주세요.
+
 꼭 `main` 브랜치에서 생성해주세요!
 
-```bash
-  git checkout -b feature/{이름}
-```
-
-- 생성 후 해당 브랜치로 바로 이동
+브랜치명 : `feature/{이름}`
 - ex. feature/kim_ji_hyun
 
 ## Pull Request
