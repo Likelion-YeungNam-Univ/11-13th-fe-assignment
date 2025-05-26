@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { projects } from "../projects";
 import { useNavigate } from "react-router-dom";
+import LanguageContext from "../contexts/LanguageContext";
 
 const Projects = () => {
   const navigate = useNavigate();
+  const { translation } = useContext(LanguageContext);
 
   const handleClickProject = async (id) => {
     navigate(`/projects/${id}`);
@@ -11,7 +13,7 @@ const Projects = () => {
   return (
     <div>
       <h1 className=" p-4 text-center text-6xl font-bold mb-12 bg-gray-300">
-        📋프로젝트 목록
+        {translation("projectsTitle")}
       </h1>
       <ul className="grid grid-cols-2 p-12 space-y-35 text-3xl font-bold">
         {projects.map((project) => (
@@ -20,7 +22,7 @@ const Projects = () => {
               onClick={() => handleClickProject(project.id)}
               className="text-black hover:underline"
             >
-              {project.title}
+              {translation(`projectTitles.${project.id}.title`)}
             </button>
           </li>
         ))}
