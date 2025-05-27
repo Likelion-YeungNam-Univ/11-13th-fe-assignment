@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { projects } from "../projects";
 import { useNavigate } from "react-router-dom";
-import LanguageContext from "../contexts/LanguageContext";
+import LanguageContext from "../contexts/Languagecontext";
 
 const Projects = () => {
   const navigate = useNavigate();
