@@ -13,30 +13,47 @@
 <br/>
 
 ## Git Clone
-**📌 개발 브랜치랑 이름이 다르니 주의해주세요!!** <br/>
-브랜치명 : `chore/{이름}` ( ex. chore/kim_ji_hyun ) <br/>
-브랜치 만들어두었으니 프롬프트에서 정확하게 사용해주시길 바랍니다.
+#### 1️⃣ 레포지토리 연결
+- 빈 폴더 clone해서 레포지토리 연결할 것입니다. 잘 따라해주세요.
+```bash
+git clone --filter=blob:none --no-checkout <레포주소> myproject
+cd myproject
+```
+> `myproject`는 clone할 때 사용할 폴더명이므로 작성하지 않아도 됩니다. <br/>
+폴더명 작성 없이 레포주소까지 작성하여 실행하면 터미널을 여신 폴더에 clone됩니다.
+- 사용 예시
+```bash
+git clone --filter=blob:none --no-checkout https://github.com/Likelion-YeungNam-Univ/11-13th-fe-assignment.git 11-13th-fe-assignmnet
+cd 11-13th-fe-assignmnet
+```
+해당 명령어 실행 시 `11-13th-fe-assignmnet` 폴더가 생기고 폴더 내부는 비어있습니다. 
 
-
-#### 1️⃣ git clone 할 때 자신의 브랜치만 클론해주세요. 
-`--single-branch` 사용해서 자신의 브랜치만 클론해서 개발할 수 있습니다.
+#### 2️⃣ 자신의 폴더만 클론되도록 설정해줍니다.
+`sparse-checkout` 사용해서 자신의 폴더만 클론해서 개발할 수 있습니다.
 - 사용법
 ```bash
-git clone --branch chore/{이름} --single-branch <URL>
+git sparse-checkout init --cone
+git sparse-checkout set {폴더명}
 ```
-
 - **예시**
 ```bash
-git clone --branch chore/kim_ji_hyun --single-branch https://github.com/Likelion-YeungNam-Univ/11-13th-fe-assignment.git
+git sparse-checkout init --cone
+git sparse-checkout set 김지현
 ```
-#### 2️⃣ git checkout -b feature/{이름}
-- 브랜치를 로컬에서 새로 만든 후 개발하셔야 브랜치가 안꼬입니다. **꼭‼️** 해주세요.
+
+#### 3️⃣ git checkout -b feature/{이름}
+```bash
+git checkout dev
+git checkout -b feature/kim_ji_hyun
+```
+- dev 브랜치를 먼저 checkout 하신 후 feature 브랜치 생성하셔야 브랜치가 안꼬입니다. **꼭‼️** 해주세요.
 - 개발용 브랜치명 :  `feature/{이름}` ( ex. feature/kim_ji_hyun )
 ```bash
+git checkout dev
 git checkout -b feature/kim_ji_hyun
 ```
 
-#### 3️⃣ 개발 시작
+#### 개발 시작
 git clone과 git checkout을 모두 수행한 후 과제 진행해주시면 됩니다.
 
 - `cd {폴더명(이름)}` 해주시고 해당 폴더에서 개발하시면 됩니다.
