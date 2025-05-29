@@ -7,9 +7,11 @@ import ProjectDetail from './pages/ProjectDetail';
 import About         from './pages/About';
 import NotFound      from './pages/NotFound';
 import Layout        from './Layout';
+import LanguageProvider from './LanguageProvider';
 
-function App() {
+const App = () => {
   return (
+    <LanguageProvider>
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
@@ -21,6 +23,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </LanguageProvider>
   );
 }
 

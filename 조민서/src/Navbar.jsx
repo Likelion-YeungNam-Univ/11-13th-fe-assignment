@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import LanguageContext from './LanguageContext';
 
 function BackButton() {
   const navigate = useNavigate();
+  const { language } = useContext(LanguageContext);
   return (
     <button
       onClick={() => navigate(-1)}
-      className="ml-auto px-2 py-1 border rounded"
+      className="px-2 py-1 border rounded text-white bg-black hover:bg-gray-700"
     >
-      뒤로가기
+      {language === 'en' ? 'Back' : '뒤로가기'}
     </button>
   );
 }
 
-export default function Navbar() {
+const Navbar = () => {
+  const { language, toggleLanguage } = useContext(LanguageContext);
   return (
-    <nav className="p-4 border-b flex gap-4 bg-black font-bold text-xl text-white">
-      <Link to="/"         className="hover:underline">홈</Link>
-      <Link to="/projects" className="hover:underline">프로젝트</Link>
-      <Link to="/about"    className="hover:underline">소개</Link>
-      <BackButton />
+    <nav className="p-4 border-b flex items-center gap-4 bg-black font-bold text-xl text-white">
+      <Link to="/"         className="hover:underline"> {language === 'en' ? 'Home'     : '홈'}     </Link>
+      <Link to="/projects" className="hover:underline"> {language === 'en' ? 'Projects' : '프로젝트'} </Link>
+      <Link to="/about"    className="hover:underline"> {language === 'en' ? 'About'    : '소개'}    </Link>
+
+      <div className="ml-auto flex items-center gap-2">
+        <button
+          onClick={toggleLanguage}
+          className="px-2 py-1 border rounded bg-white text-black hover:bg-gray-200"
+        >
+          {language === 'en' ? 'KO' : 'EN'}
+        </button>
+        <BackButton />
+      </div>
     </nav>
   );
 }
+
+export default Navbar;
