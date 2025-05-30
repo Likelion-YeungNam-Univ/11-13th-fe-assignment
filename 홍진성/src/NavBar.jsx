@@ -52,7 +52,7 @@ const NavBar = () => {
           </div>
           <button
             onClick={() => changeLang(language)}
-            className="bg-black text-white px-1 h-7"
+            className="bg-black text-white px-1 h-7 hover:bg-gray-600"
           >
             {texts[language].change}
           </button>
