@@ -46,13 +46,13 @@ const NavBar = () => {
       </span>
 
       <span className="flex space-x-2">
-        <span className="flex border">
-          <div className="w-12 h-7 text-center text-md font-semibold">
+        <span className="flex border justify-center">
+          <div className="w-12 h-7 flex items-center justify-center text-md font-semibold">
             {language}
           </div>
           <button
             onClick={() => changeLang(language)}
-            className="bg-black text-white px-1 h-7 hover:bg-gray-600"
+            className="bg-black text-white px-1 h-6.5 hover:opacity-80"
           >
             {texts[language].change}
           </button>
