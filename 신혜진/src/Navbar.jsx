@@ -23,7 +23,7 @@ const Navbar = () => {
         onClick={changeLanguage}
         className="border-2 px-2 bg-gray-300 text-blue-950 hover:bg-white cursor-pointer"
       >
-        {language === "ko" ? "ENGLISH" : "한국어"}
+        {language === "ko" ? "ENGLISH 전환" : "한국어 전환"}
       </button>
     </nav>
   );
