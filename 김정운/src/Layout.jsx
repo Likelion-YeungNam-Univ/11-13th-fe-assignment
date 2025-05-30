@@ -7,19 +7,8 @@ const Layout = () => {
   return (
     <div>
       <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-          zIndex: 0,
-          backgroundImage: `url(${Bg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.3,
-          pointerEvents: "none",
-        }}
+        className="fixed top-0 left-0 w-screen h-screen z-0 bg-cover bg-center opacity-30 pointer-events-none"
+        style={{ backgroundImage: `url(${Bg})` }}
       />
       <div style={{ position: "relative", zIndex: 1 }}>
         <Navbar />
