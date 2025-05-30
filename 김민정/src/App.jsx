@@ -5,20 +5,23 @@ import Project from "./pages/Project";
 import ProjectDetail from "./pages/ProjectDetail";
 import About from "./pages/About";
 import Layout from "./Layout";
+import LanguageProvider from "./LanguageProvider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="projects" element={<Project />} />
-          <Route path="projects/:projectId" element={<ProjectDetail />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="projects" element={<Project />} />
+            <Route path="projects/:projectId" element={<ProjectDetail />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 
