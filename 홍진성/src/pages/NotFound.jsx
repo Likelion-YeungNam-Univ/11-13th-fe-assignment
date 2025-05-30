@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import LanguageContext from "../contexts/LanguageContext";
 
 const NotFound = () => {
   const navigate = useNavigate();
+  const { language } = useContext(LanguageContext);
+
+  const texts = {
+    "🇰🇷 KO": {
+      notFound: "페이지를 찾을 수 없습니다.",
+      click: "화면을 클릭하세요.",
+    },
+    "🇺🇸 EN": {
+      notFound: "Page Not Found",
+      click: "Click anywhere to return.",
+    },
+  };
 
   return (
     <div
@@ -13,9 +26,9 @@ const NotFound = () => {
         404
       </h1>
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-2">
-        Not Found
+        {texts[language].notFound}
       </h2>
-      <p className="text-gray-700 mb-6">화면을 클릭하세요.</p>
+      <p className="text-gray-700 mb-6">{texts[language].click}</p>
     </div>
   );
 };
