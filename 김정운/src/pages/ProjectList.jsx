@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import projects from './projects'
+import { LanguageContext } from '../LanguageContext';
 
 const ProjectList = () => {
+  const { language } = useContext(LanguageContext);
   const { projectId } = useParams();
-  const project = projects.find((project) => project.projectId === parseInt(projectId));
+
+  const projectArr = language === "en" ? projects.en : projects.ko;
+  const project = projectArr.find((project) => project.projectId === parseInt(projectId));
 
   if (!project) {
     return (
-      <div className="p-4 text-red-500">해당 프로젝트 정보를 찾을 수 없습니다.</div>
-    );
+      <div className="p-4 text-red-500">
+        {language === "en" ? "Project information not found." : "해당 프로젝트 정보를 찾을 수 없습니다."}
+      </div>
+    )
   }
 
   return (
@@ -18,7 +24,7 @@ const ProjectList = () => {
       <p>{project.description}</p>
       <img src={project.imgSrc} alt={project.projectName} className="mt-4 rounded-lg shadow-lg" />
       {project.codeimgSrc && (
-        <img src={project.codeimgSrc} alt="코드 이미지" className="mt-4 rounded-lg shadow-lg" />
+        <img src={project.codeimgSrc} alt={language === "en" ? "Code image" : "코드 이미지"} className="mt-4 rounded-lg shadow-lg" />
       )}
     </div>
   )
