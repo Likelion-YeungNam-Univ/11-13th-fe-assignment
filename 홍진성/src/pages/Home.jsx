@@ -19,7 +19,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="h-screen">
       <div className="text-lg font-extrabold">{texts[language].guide}</div>
       <div className="flex flex-col space-y-3 justify-center items-center">
         <div className="flex justify-center text-3xl">
@@ -28,7 +28,7 @@ const Home = () => {
         <img
           src="https://mblogthumb-phinf.pstatic.net/MjAyMTAxMTZfMjcx/MDAxNjEwNzc1OTg0OTAy.zRE-4PnI79kRMdJQ7TcI6b6L1HYqXrqIXXSiaRl0cxsg.gAqFhL-F5Trn3QESHk3msTnakyvCUbs3dwH19rJrEIcg.GIF.cc_76/i015146442997.gif?type=w800"
           onClick={() => navigate("/about")}
-          alt="dancing gif"
+          alt="hello image"
         />
       </div>
     </div>
