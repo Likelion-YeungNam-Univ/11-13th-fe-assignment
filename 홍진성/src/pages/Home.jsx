@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
+
   return (
     <div>
       <div className="text-lg font-extrabold">
