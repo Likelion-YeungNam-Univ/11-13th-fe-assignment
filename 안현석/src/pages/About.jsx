@@ -1,4 +1,8 @@
+import { useLanguage } from "../contexts/LanguageContext";
+
 export default function About() {
+  const { language } = useLanguage();
+
   const educationList = [
     {
       id: 1,
@@ -19,6 +23,7 @@ export default function About() {
       major: "",
     },
   ];
+
   const certificateList = [
     {
       date: "2019/09/23",
@@ -53,12 +58,12 @@ export default function About() {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-white px-10 overflow-y-auto ">
+    <div className="flex flex-col w-full bg-white px-10 overflow-y-auto">
       <div className="flex justify-between space-x-20">
         {/* Education Section */}
         <div className="w-1/2 flex flex-col space-y-6">
           <div className="text-4xl font-extrabold text-blue-600 border-b-4 border-blue-500 pb-2">
-            Education
+            {language === "ko" ? "학력" : "Education"}
           </div>
           {educationList.map((ed) => (
             <div
@@ -77,10 +82,12 @@ export default function About() {
         {/* Work History Section */}
         <div className="w-1/2 flex flex-col space-y-6">
           <div className="text-4xl font-extrabold text-blue-600 border-b-4 border-blue-500 pb-2">
-            Work History
+            {language === "ko" ? "경력" : "Work History"}
           </div>
           <div className="text-gray-400 text-sm italic">
-            경력 사항이 아직 없습니다 :)
+            {language === "ko"
+              ? "경력 사항이 아직 없습니다 :)"
+              : "No work history yet :)"}
           </div>
         </div>
       </div>
@@ -88,7 +95,7 @@ export default function About() {
       {/* Certificate Section */}
       <div className="mt-16">
         <div className="text-4xl font-extrabold text-blue-600 border-b-4 border-blue-500 pb-2 mb-6">
-          Certificates
+          {language === "ko" ? "자격증" : "Certificates"}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {certificateList.map((cert, index) => (
@@ -100,36 +107,44 @@ export default function About() {
                 {cert.title}
               </div>
               <div className="text-sm text-gray-500 mb-1">
-                발급일: {cert.date}
+                {language === "ko"
+                  ? `발급일: ${cert.date}`
+                  : `Issued: ${cert.date}`}
               </div>
               <div className="text-sm text-gray-600">
-                발급기관: {cert.where}
+                {language === "ko"
+                  ? `발급기관: ${cert.where}`
+                  : `Issued by: ${cert.where}`}
               </div>
             </div>
           ))}
         </div>
       </div>
+
       {/* Skills Section */}
       <div className="mt-16">
         <div className="text-4xl font-extrabold text-blue-600 border-b-4 border-blue-500 pb-2 mb-6">
-          Skills
+          {language === "ko" ? "기술 스택" : "Skills"}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-800">
           <div>
             <div className="font-semibold text-lg mb-2">
-              💻 Languages & Frameworks
+              💻{" "}
+              {language === "ko"
+                ? "프로그래밍 언어 및 프레임워크"
+                : "Languages & Frameworks"}
             </div>
             <ul className="list-disc ml-5 space-y-1">
               <li>JavaScript / TypeScript</li>
               <li>React / React Native</li>
-              <li>Node.js </li>
+              <li>Node.js</li>
               <li>Python / C / C++</li>
               <li>HTML / CSS / Tailwind CSS</li>
             </ul>
           </div>
           <div>
             <div className="font-semibold text-lg mb-2">
-              🛠 Tools & Platforms
+              🛠 {language === "ko" ? "도구 및 플랫폼" : "Tools & Platforms"}
             </div>
             <ul className="list-disc ml-5 space-y-1">
               <li>Git / GitHub</li>
@@ -137,7 +152,9 @@ export default function About() {
             </ul>
           </div>
           <div>
-            <div className="font-semibold text-lg mb-2">⚙️ Etc.</div>
+            <div className="font-semibold text-lg mb-2">
+              ⚙️ {language === "ko" ? "기타" : "Etc."}
+            </div>
             <ul className="list-disc ml-5 space-y-1">
               <li>REST API</li>
               <li>Zustand</li>
