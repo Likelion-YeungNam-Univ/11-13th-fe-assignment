@@ -6,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate();
   const toProjects = () => navigate("/projects");
   const toAbout = () => navigate("/about");
-  const { language, changeLanguage } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
 
   const btnStyle =
     "bg-blue-950 text-gray-200 rounded-2xl px-5 py-2 font-bold hover:bg-yellow-900 cursor-pointer";

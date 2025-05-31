@@ -5,7 +5,7 @@ import LanguageContext from "../LanguageContext";
 const NotFound = () => {
   const navigate = useNavigate();
   const toHome = () => navigate("/");
-  const { language, changeLanguage } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-50 text-center px-4">
