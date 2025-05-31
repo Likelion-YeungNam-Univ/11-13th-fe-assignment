@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
+import { MyProvider } from "./contexts/context";
 
 function App() {
   return (
@@ -17,17 +18,19 @@ function App() {
     // + 추가로 만들고 싶은 페이지 자유롭게 구현하셔도 됩니다~!!
     // + 중첩 라우팅 활용해서 구현해주세요.
     // 멋사 노션 페이지의 조건 사항 꼭 확인해주시고 다 만족시켜서 과제 해주세요.
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="projects/:projectId" element={<ProjectDetail />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <MyProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="projects/:projectId" element={<ProjectDetail />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </MyProvider>
   );
 }
 
