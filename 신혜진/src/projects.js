@@ -14,28 +14,54 @@ import project3Img4 from "./assets/project3-4.png";
 export const projects = [
   {
     projectId: 1,
-    title: "Term Project",
-    program: "자바프로그래밍및실습",
+    title: {
+      ko: "텀 프로젝트",
+      en: "Term Project",
+    },
+    program: {
+      ko: "자바프로그래밍및실습",
+      en: "Java Programming and Practice",
+    },
     period: "2024-05-02 ~ 2024-06-03",
-    contents: "자바의 상속, 확장을 이용한 게임 만들기",
+    contents: {
+      ko: "자바의 상속, 확장을 이용한 게임 만들기",
+      en: "A game developed using inheritance and extension in Java",
+    },
     image: [project1Img1, project1Img2, project1Img3, project1Img4],
   },
   {
     projectId: 2,
-    title: "Capstone Design",
-    program: "글로벌SW역량강화프로그램",
+    title: {
+      ko: "캡스톤 디자인",
+      en: "Capstone Design",
+    },
+    program: {
+      ko: "글로벌SW역량강화프로그램",
+      en: "Global SW Capacity Enhancement Program",
+    },
     period: "2024-07-20 ~ 2024-08-24",
-    contents:
-      "질문에 어려움을 느끼는 학생들 및 학생들이 질문하기를 바라시는 선생님들을 타겟으로 한 교육 서비스 기획",
+    contents: {
+      ko: "질문에 어려움을 느끼는 학생들 및 학생들이 질문하기를 바라시는 선생님들을 타겟으로 한 교육 서비스 기획",
+      en: "Planning educational services for students who have difficulty asking questions and teachers who want them to ask questions",
+    },
+
     image: [project2Img1, project2Img2, project2Img3, project2Img4],
   },
   {
     projectId: 3,
-    title: "Data Create Camp",
-    program: "MIDAS GROUP",
+    title: {
+      ko: "데이터 크리에이터 캠프",
+      en: "Data Create Camp",
+    },
+    program: {
+      ko: "마이다스 그룹",
+      en: "MIDAS GROUP",
+    },
     period: "2024-09-12 ~ 2024-11-22",
-    contents:
-      "연도별 패션 스타일 이미지 및 추천 데이터를 바탕으로 패션 스타일 선호 여부를 예측하는 인공지능 모델 개발",
+    contents: {
+      ko: "연도별 패션 스타일 이미지 및 추천 데이터를 바탕으로 패션 스타일 선호 여부를 예측하는 인공지능 모델 개발",
+      en: "Development of AI models that predict fashion style preferences based on annual fashion style images and recommendation data",
+    },
     image: [project3Img1, project3Img2, project3Img3, project3Img4],
   },
 ];
