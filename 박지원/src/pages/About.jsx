@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { SiVelog } from "react-icons/si";
+import { useLanguage } from "../contexts/context";
 
 const About = () => {
+  const { language } = useLanguage();
+
   return (
     <section className="flex flex-col md:flex-row items-center justify-center p-6 w-full bg-white">
       <div className="flex flex-col justify-center items-center w-12 space-y-4 text-gray-700">
@@ -20,14 +23,26 @@ const About = () => {
       </div>
 
       <div className="flex-1 text-center px-6 py-10">
-        <h2 className="text-lg text-gray-600">안녕하세요! 저는</h2>
+        <h2 className="text-lg text-gray-600">
+          {language === "EN" ? "Hello! My name is" : "안녕하세요! 저는"}
+        </h2>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          박지원입니다.
+          {language === "EN" ? "Jiwon Park" : "박지원입니다."}
         </h1>
         <p className="text-gray-600 mb-6">
-          프론트엔드 개발을 꿈꾸는 학생입니다.
-          <br />
-          인터렉티브한 웹을 개발하는 데 큰 관심이 있습니다!
+          {language === "EN" ? (
+            <>
+              I am a student aspiring to become a frontend developer.
+              <br />I am particularly interested in developing interactive web
+              experiences!
+            </>
+          ) : (
+            <>
+              프론트엔드 개발을 꿈꾸는 학생입니다.
+              <br />
+              인터렉티브한 웹을 개발하는 데 큰 관심이 있습니다!
+            </>
+          )}
         </p>
       </div>
     </section>
