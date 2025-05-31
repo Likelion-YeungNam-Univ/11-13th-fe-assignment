@@ -10,13 +10,13 @@ const Navbar = () => {
     <nav className="flex justify-between p-4 bg-blue-950 text-gray-300 font-semibold">
       <div>
         <Link to="/" className={linkStyle}>
-          Home
+          {language === "ko" ? "홈" : "Home"}
         </Link>
         <Link to="/projects" className={linkStyle}>
-          Projects
+          {language === "ko" ? "프로젝트" : "Projects"}
         </Link>
         <Link to="/about" className={linkStyle}>
-          Introduction
+          {language === "ko" ? "자기소개" : "Introduction"}
         </Link>
       </div>
       <button
